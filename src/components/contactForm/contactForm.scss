@@ -1,3 +1,4 @@
+@import 'src/styles/mixins/breakpoint.scss';
 @import 'src/styles/variables/colors.scss';
 
 .contact-container {
@@ -5,8 +6,21 @@
     color: $blue;
   }
 
+  p {
+    width: 75%;
+    text-align: center;
+  }
+
   .contact-form {
     margin: 15px;
     width: 25rem;
+  }
+}
+
+@include breakpoint(tablet) {
+  .contact-container {
+    p {
+      width: 90%;
+    }
   }
 }
