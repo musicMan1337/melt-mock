@@ -11,6 +11,7 @@ const Textarea = ({
 }) => {
   return (
     <textarea
+      id={name}
       name={name}
       className={['input', variant].join(' ')}
       rows={rows}

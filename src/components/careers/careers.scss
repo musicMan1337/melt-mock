@@ -2,7 +2,7 @@
 
 .image-hack.i2 {
   background-position: center;
-  background-image: url('https://fitsmallbusiness.com/wp-content/uploads/2019/06/Setting-Up-an-Office-in-5-Steps.png');
+  background-image: url('../../images/careers-img.png');
 }
 
 .careers-container {
@@ -12,29 +12,13 @@
   background: $careers-backg;
 }
 
-.careers-btn {
-  margin-top: 10px;
-  outline: none;
-  color: $white;
-  background-color: rgba($color: #000, $alpha: 0);
-  font-weight: 400;
-  transition: all 0.2s ease-in-out;
-}
-
-.careers-btn:hover,
-.careers-btn:focus {
-  cursor: pointer;
-  background-color: $white;
-  color: $black;
-}
-
 .video-container {
   width: 100%;
   margin-bottom: 20px;
   background: $video-backg;
-}
 
-.video-careers {
-  width: 28rem;
-  height: 15rem;
+  .video-careers {
+    width: 28rem;
+    height: 15rem;
+  }
 }

@@ -6,7 +6,7 @@ import { fbLogo, instaLogo, liLogo, twitterLogo } from 'src/images';
 
 const MapModal = () => {
   const infoFields = {
-    Adress: [
+    Address: [
       '1255 W Rio Salado Pkwy',
       'Suite 209',
       'Tempe, AZ 85281',
@@ -16,22 +16,25 @@ const MapModal = () => {
   };
 
   const renderInfoFields = Object.keys(infoFields).map((key) => (
-    <p key={key}>
-      <strong>{key}:</strong>
-      {infoFields[key].map((line) => (
-        <React.Fragment key={line}>
-          <br />
-          {line}
-        </React.Fragment>
-      ))}
-    </p>
+    <React.Fragment key={key}>
+      <h3>
+        <strong>{key}:</strong>
+      </h3>
+      {infoFields[key].length ? (
+        <>
+          {infoFields[key].map((line) => (
+            <span key={line}>{line}</span>
+          ))}
+        </>
+      ) : null}
+    </React.Fragment>
   ));
 
   return (
     <div className="map-container">
       <div className="map-modal">
         <h2>
-          Get in <strong>touch.</strong>
+          Get in<strong> touch.</strong>
         </h2>
         {renderInfoFields}
         <div className="map-icons">

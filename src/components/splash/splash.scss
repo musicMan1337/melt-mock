@@ -2,7 +2,7 @@
 @import 'src/styles/variables/colors.scss';
 
 .image-hack.i1 {
-  background-image: url('https://media.istockphoto.com/photos/businessman-hero-picture-id158909167?k=6&m=158909167&s=612x612&w=0&h=-ukmd3r6jixwCJIMEXQFW_YZVVMRB5oe9z0QfqXxn4Y=');
+  background-image: url('../../images/splash-img.jpg');
 }
 
 .splash-container {
@@ -11,37 +11,37 @@
   padding: 4rem 0;
   background-color: $splash-backg;
   color: $white;
+
+  > * {
+    flex: 1;
+  }
+
+  .splash-article-container {
+    width: 70%;
+    padding: 0 1rem 0 4rem;
+    align-items: flex-start;
+  }
+
+  .splash-article {
+    font-size: 0.9rem;
+  }
+
+  .splash-link {
+    margin: 15px 0;
+  }
+
+  .splash-image-container {
+    padding: 0 1rem;
+    margin: 15px 0 0 10px;
+  }
+
+  .splash-image {
+    width: 25rem;
+  }
 }
 
 @include breakpoint(tablet) {
   .splash-container {
     flex-direction: row;
   }
-}
-
-.splash-container > * {
-  flex: 1;
-}
-
-.splash-article-container {
-  width: 70%;
-  padding: 0 1rem 0 4rem;
-  align-items: flex-start;
-}
-
-.splash-article {
-  font-size: 0.9rem;
-}
-
-.splash-link {
-  margin: 15px 0;
-}
-
-.splash-image-container {
-  padding: 0 1rem;
-  margin-left: 10px;
-}
-
-.splash-image {
-  width: 25rem;
 }

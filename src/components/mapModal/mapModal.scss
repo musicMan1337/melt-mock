@@ -13,30 +13,31 @@
 
 .map-modal {
   margin-left: 4rem;
-  padding: 0.6rem 1.5rem 1.5rem;
+  padding: 0.6rem 1.5rem 1rem;
   align-self: flex-start;
   align-items: flex-start;
   color: $white;
   background-color: $map-modal-backg;
   border-radius: 4px;
+
+  h3 {
+    margin: 15px 0 -4px;
+  }
+
+  .map-icons {
+    width: 100%;
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    > * {
+      width: 2rem;
+    }
+  }
 }
 
 @include breakpoint(tablet) {
   .map-modal {
     margin-left: 6rem;
   }
-}
-
-.map-modal > * {
-  margin-top: 10px;
-}
-
-.map-icons {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.map-icons > * {
-  width: 2rem;
 }

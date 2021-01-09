@@ -3,36 +3,36 @@
 .about-container {
   margin: 20px;
   width: 65%;
-}
 
-.about-article-container {
-  margin-bottom: 15px;
-  text-align: center;
-}
+  .about-article-container {
+    margin-bottom: 15px;
+    text-align: center;
+  }
 
-.about-header {
-  color: $blue;
-}
+  .about-header {
+    color: $blue;
+  }
 
-.about-icons {
-  width: 90%;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .about-icons {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
 
-.about-icons > * {
-  width: 4rem;
-}
+    > * {
+      width: 4rem;
+    }
 
-.icon-click {
-  width: 3.5rem;
-}
+    .icon-click {
+      width: 3.5rem;
+    }
 
-.icon-smile,
-.icon-people {
-  width: 3rem;
-}
+    .icon-smile,
+    .icon-people {
+      width: 3rem;
+    }
 
-.icon-graph {
-  margin-right: -0.8rem;
+    .icon-graph {
+      margin-right: -0.8rem;
+    }
+  }
 }
