@@ -16,7 +16,7 @@
     Vanilla React/Sass - HTML/CSS Wireframe
   </h3>
   <h3 align="center">
-    You can check out the live page <a href="https://melt-challenge.vercel.app">HERE!</a>
+    You can check out the live page <a href="https://melt-challenge.vercel.app" target="_blank">HERE!</a>
   </h3>
   <p align="center">
     ...or run <code>npm i && npm start</code> 😅
