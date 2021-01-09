@@ -8,14 +8,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/GIT-USERNAME-HERE/REPO-NAME-HERE">
-    <img src="https://images.squarespace-cdn.com/content/v1/544816bbe4b039987021a843/1415047982653-1931ZPBJEI1H2YE7CZ5R/ke17ZwdGBToddI8pDm48kODEHMGUBRgRRplOmqRomK1Zw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7Rb66VC8y5UmDKESC3gpGyXuuE80dFkeX9PanWgM3V4qRJePadRz66WmX0L5eMAEew/melt_logo.png?format=300w" alt="Logo" width="100" height="100">
-  </a>
+    <img src="https://www.drupal.org/files/styles/grid-3/public/meltmedia_alternate_logo.png?itok=KDrusUFD" alt="Logo" width="200" height="200">
 
   <h3 align="center">meltmedia Challenge!</h3>
 
   <p align="center">
     Vanilla React/Sass - HTML/CSS Wireframe
+  </p>
+  <p align="center">
+    You can check out the live page <a href="https://melt-challenge.vercel.app">HERE!</a>
+  </p>
+  <p align="center">
+    ...or run <code>npm i && npm start</code> 😅
   </p>
 </p>
 
