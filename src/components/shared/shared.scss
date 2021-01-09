@@ -1,0 +1,104 @@
+@import 'src/styles/variables/colors.scss';
+
+/* ===============
+     -=BUTTON=-
+   =============== */
+
+.button {
+  padding: 5px 25px;
+  border: solid 2px #f7f7f7;
+  border-radius: 4px;
+  font-weight: 400;
+  outline: none;
+  background-color: rgba($color: #000, $alpha: 0);
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+}
+
+//-- variants --//
+
+// nav-bar
+.btn-nav {
+  padding: 0 4px;
+  border: none;
+  border-radius: 0;
+  font-weight: 300;
+  margin-left: 1em;
+  color: $white;
+  box-shadow: 0 -1px transparent inset;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.btn-nav:hover,
+.btn-nav:focus {
+  box-shadow: 0 -2px $black inset;
+}
+
+// white
+.btn-white {
+  margin-top: 10px;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+  background-color: $white;
+  color: $black;
+}
+
+// icon
+.btn-icon {
+  border: none;
+  padding: 0;
+}
+
+// submit
+.btn-submit {
+  border: solid 2px rgba($color: #000, $alpha: 0);
+  border-bottom: solid 2px $black;
+  transition: all 0.2s ease-in-out, border 0.1s ease-in;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  border: solid 2px $black;
+  background-color: $black;
+  color: $white;
+  transition: all 0.2s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* ===============
+      -=LABEL=-
+   =============== */
+
+.label {
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: stretch;
+  font-size: 1.3rem;
+}
+
+/* ===============
+  -=INPUT/TEXTAREA=-
+   =============== */
+
+.input,
+.textarea {
+  outline: none;
+  border: solid 1.5px rgba($color: #000, $alpha: 0.15);
+  border-radius: 2px;
+  background-color: $form-white;
+  padding: 4px 0 4px 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: border 0.2s ease-out;
+}
+
+.input:focus,
+.textarea:focus {
+  border: solid 1.5px $blue;
+}

@@ -1,0 +1,51 @@
+@import 'src/styles/css-reset/css_reset';
+
+@import 'src/styles/variables/colors';
+@import 'src/styles/variables/font-bank';
+
+@import 'src/styles/mixins/fluid-type';
+
+html {
+  @include fluid-type(font-size, 320px, 1400px, 12px, 32px);
+}
+
+* {
+  font-family: $main-font;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+strong {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.headline {
+  font-family: $headline-font;
+}
+
+body {
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+.image-hack {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

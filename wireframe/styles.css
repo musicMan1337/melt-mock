@@ -1,0 +1,459 @@
+/* CSS DIRECTORY  *
+ -=CSS RESET=-    *
+ -=NAV BAR=-      *
+ -=SPLASH=-       *
+ -=ABOUT=-        *
+ -=CAREERS=-      *
+ -=MAP MODAL=-    *
+ -=CONTACT FORM=- *
+ -=FOOTER=-       *
+* * * * * * * * * */
+
+/* ===============
+   -=CSS RESET=-
+   =============== */
+
+body, div, span, h1, h2, h3, h4, h5, h6,
+p, code, ol, ul, li, button, caption,
+input, fieldset, form, label, legend,
+table, textarea, tbody, tfoot, thead,
+article, aside, details, footer, header,
+main, menu, nav, section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote, button, caption,
+h1, h2, h3, h4, h5, h6, input,
+legend, option, p, textarea {
+  display: block;
+}
+
+a, img, br, code, span, strong {
+  display: inline;
+}
+
+input[type=date], input[type=datetime-local],
+input[type=file], input[type=month],
+input[type=time], input[type=week], select {
+  flex-direction: row;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  background-color: transparent;
+  background-image: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+a img, :link img, :visited img {
+  border: none;
+}
+
+:link, :visited {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+hr {
+  margin: 10px;
+  width: 99.8%;
+  border: 1px solid black;
+}
+
+address {
+  font-style: normal;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===============
+   -=TYPOGRAPHY=-
+   =============== */
+
+html {
+  font-size: 12px;
+}
+
+@media (min-width: 320px) {
+  html {
+    font-size: calc(12px + 8 * (100vw - 320px) / 1080);
+  }
+}
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+* {
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+strong {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.headline {
+  font-family: 'BenchNine', sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+  width: 100%;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+.button {
+  padding: 5px 25px;
+  border: solid 2px #f7f7f7;
+  border-radius: 4px;
+}
+
+.image-hack {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ===============
+     -=NAV BAR=-
+   =============== */
+
+.nav-bar {
+  width: 90%;
+  padding: 4px 100px 4px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #f7f7f7;
+}
+
+/* TODO: add .active on window.scroll */
+.nav-bar.active {
+  background-color: rgba(108, 147, 190, 90%);
+}
+
+.nav-logo {
+  width: 30px;
+}
+
+.nav-links {
+  flex-direction: row;
+}
+
+.link-wrapper {
+  margin-left: 1em;
+  font-size: 1em;
+  position: relative;
+}
+
+/* TODO: left-to-right animation */
+.link {
+  box-shadow: 0 -2px transparent inset ;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.link:hover {
+  box-shadow: 0 -2px #393A3C inset;
+}
+
+/* ===============
+     -=SPLASH=-
+   =============== */
+
+.image-hack.i1 {
+  background-image: url('https://media.istockphoto.com/photos/businessman-hero-picture-id158909167?k=6&m=158909167&s=612x612&w=0&h=-ukmd3r6jixwCJIMEXQFW_YZVVMRB5oe9z0QfqXxn4Y=');
+}
+
+.splash-container {
+  width: 100%;
+  flex-direction: column;
+  padding: 4rem 0;
+  background-color: rgba(94, 123, 154, 90%);
+  color: #f7f7f7;
+}
+
+@media (min-width: 768px) {
+  .splash-container {
+    flex-direction: row;
+  }
+}
+
+.splash-container > * {
+  flex: 1;
+}
+
+.splash-article-container {
+  width: 70%;
+  padding: 0 1rem 0 4rem;
+  align-items: flex-start;
+}
+
+.splash-article {
+  font-size: 0.9rem;
+}
+
+.splash-link {
+  margin: 15px 0;
+}
+
+.splash-image-container {
+  padding: 0 1rem;
+  margin-left: 10px;
+}
+
+.splash-image {
+  width: 25rem;
+}
+
+/* ===============
+      -=ABOUT=-
+   =============== */
+
+.about-container {
+  margin: 20px;
+  width: 70%;
+}
+
+.about-article-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-header {
+  color: #8AB6EE;
+}
+
+.about-icons {
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .about-icons {
+    width: 80%;
+  }
+
+  .about-container {
+    width: 60%;
+  }
+}
+
+.about-icons > * {
+  width: 4rem;
+}
+
+.icon-click {
+  width: 3.5rem;
+}
+
+.icon-smile, .icon-people {
+  width: 3rem;
+}
+
+.icon-graph {
+  margin-right: -0.8rem;
+}
+
+/* ===============
+     -=CAREERS=-
+   =============== */
+
+.image-hack.i2 {
+  background-image: url('https://fitsmallbusiness.com/wp-content/uploads/2019/06/Setting-Up-an-Office-in-5-Steps.png');
+  background-position: center;
+}
+
+.careers-container {
+  width: 100%;
+  padding: 2.5rem;
+  color: #f7f7f7;
+  background: linear-gradient(
+    rgba(57,58,60,80%) 0%,
+    rgba(57,58,60,80%) 70%,
+    rgb(94,96,99) 100%
+  );
+}
+
+.careers-link {
+  margin-top: 10px;
+  outline: none;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+
+.careers-link:hover,
+.careers-link:focus {
+  background-color: #f7f7f7;
+  color: #393A3C;
+}
+
+.video-container {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(
+    rgb(94,96,99) 0%,
+    rgb(247,247,247) 50%
+  );
+}
+
+.video-careers {
+  width: 28rem;
+  height: 18rem;
+}
+
+@media (min-width: 768px) {
+  .video-careers {
+    width: 36rem;
+    height: 22rem;
+  }
+}
+
+/* ===============
+    -=MAP MODAL=-
+   =============== */
+
+.map-container {
+  width: 100%;
+  margin: 20px;
+  padding: 5rem;
+  background-image: url('./melt-map.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.map-modal {
+  margin-left: 8rem;
+  padding: 0.6rem 1.5rem 1.5rem;
+  align-self: flex-start;
+  align-items: flex-start;
+  color: #f7f7f7;
+  background-color: rgba(57, 58, 60, 85%);
+  border-radius: 4px;
+}
+
+.map-modal > * {
+  margin-top: 10px;
+}
+
+.map-icons {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.map-icons > * {
+  width: 2rem;
+}
+
+/* ===============
+   -=CONTACT FORM=-
+   =============== */
+
+.contact-container h2 {
+  color: #8AB6EE;
+}
+
+.contact-form {
+  margin: 15px;
+  width: 25rem;
+}
+
+.label {
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: stretch;
+  font-size: 1.3rem;
+}
+
+.input, .textarea {
+  outline: none;
+  border: solid 1.5px rgba(0, 0, 0, 15%);
+  border-radius: 2px;
+  background-color: #eee;
+  padding: 4px 0 4px 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: border 0.2s ease-in-out;
+}
+
+.textarea {
+  resize: none;
+}
+
+.input:focus, .textarea:focus {
+  border: solid 1.5px #8AB6EE;
+}
+
+.submit {
+  outline: none;
+  border: solid 2px rgba(0, 0, 0, 0);
+  border-bottom: solid 2px #393A3C;
+  background-color: #f7f7f7;
+  font-weight: 400;
+  transition:
+    color 0.2s ease-in-out,
+    border 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.submit:hover, .submit:focus {
+  border: solid 2px #393A3C;
+  cursor: pointer;
+  background-color: #393A3C;
+  color: #f7f7f7;
+}
+
+/* ===============
+     -=FOOTER=-
+   =============== */
+
+.footer {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  color: #f7f7f7;
+  background-color: rgb(108, 147, 190);
+}

@@ -1,0 +1,42 @@
+@import 'src/styles/mixins/breakpoint.scss';
+@import 'src/styles/variables/colors.scss';
+
+.map-container {
+  width: 100%;
+  margin: 20px;
+  padding: 5rem;
+  background-image: url('../../images/melt-map.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.map-modal {
+  margin-left: 4rem;
+  padding: 0.6rem 1.5rem 1.5rem;
+  align-self: flex-start;
+  align-items: flex-start;
+  color: $white;
+  background-color: $map-modal-backg;
+  border-radius: 4px;
+}
+
+@include breakpoint(tablet) {
+  .map-modal {
+    margin-left: 6rem;
+  }
+}
+
+.map-modal > * {
+  margin-top: 10px;
+}
+
+.map-icons {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.map-icons > * {
+  width: 2rem;
+}
