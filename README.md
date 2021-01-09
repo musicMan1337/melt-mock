@@ -1,18 +1,3 @@
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-<!-- ! highlight and 'ctrl+shift+L' to replace all ! -->
-
-GIT-USERNAME-HERE
-REPO-NAME-HERE
-APP-NAME-HERE
-PUT-TECH-STACK-HERE
-CLIENT-DEPLOY-URL-HERE
-
-<!-- ! highlight and 'ctrl+shift+L' to replace all ! -->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -24,215 +9,89 @@ CLIENT-DEPLOY-URL-HERE
 <br />
 <p align="center">
   <a href="https://github.com/GIT-USERNAME-HERE/REPO-NAME-HERE">
-    <img src="images/LOGO-PATH-HERE" alt="Logo" width="100" height="100">
+    <img src="https://images.squarespace-cdn.com/content/v1/544816bbe4b039987021a843/1415047982653-1931ZPBJEI1H2YE7CZ5R/ke17ZwdGBToddI8pDm48kODEHMGUBRgRRplOmqRomK1Zw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7Rb66VC8y5UmDKESC3gpGyXuuE80dFkeX9PanWgM3V4qRJePadRz66WmX0L5eMAEew/melt_logo.png?format=300w" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">APP-NAME-HERE - Client</h3>
+  <h3 align="center">meltmedia Challenge!</h3>
 
   <p align="center">
-    PUT-TECH-STACK-HERE
-    <br />
-    <a href="https://github.com/GIT-USERNAME-HERE/REPO-NAME-HERE"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/GIT-USERNAME-HERE/REPO-NAME-HERE/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/GIT-USERNAME-HERE/REPO-NAME-HERE/issues">Request Feature?</a>
+    Vanilla React/Sass - HTML/CSS Wireframe
   </p>
 </p>
 
----
-
-<h1 align="center"><a href="https://CLIENT-DEPLOY-URL-HERE">Set List App</a></h1>
-
 > ---
 >
-> _This will be a comprehensive README for the sake of both prospective employers and fellow cohort peers, and whomever else would be interested in some of the techniques I've learned creating my frist Fullstack application. As a bonus, this README has some interesting implementations, though I won't address them here. Enjoy!_
+> _This will be a pithy README covering the basic structure of the app so you know what the heck is going on!_
 >
 > ---
 
 ---
 
-###### This README will systematically go over the entire app from the top level to the bottom layer, so I'll provide links to various sections for convenience.
+# wireframe:
 
-# TODO - ADD DIRECTORY LINKS!
+Static page built using vanilla html and css. Both the `.html` and `.css` files are broken up into sections using big fancy ASCII art, aligning with the page layout. There's also a small table of contents at the top of the `.css` page!
 
----
-
-## public
-
-The Public folder is nothing special, besides the custom favicon and (as I'll note later) some imported CDNs in the head of index.html for a few Google Fonts.
-
-_As an aside, it's actually faster (from a runtime perspective) to import fonts via CDNs, as apposed to importing them directly into stylesheets_
-
----
+- _I personally used a VSCode extension called "live server" to run the page locally in the browser. It's a handy tool that requires no setup and even has hot reloading 👌_
 
 # src:
 
-## config.js, index.js, and setupTests.js
+Using React components helped to visualize the different sections of the page (at least from a code perspective), and each section has it's own dedicated file in the `src/components/` folder.
 
-**[ config.js ]** - this is essentially where I store "environment" variables. One important thing to know is that React has a built-in `NODE_ENV` variable that is set automatically when running scripts:
+## src/components:
 
-1. Run **Start**: `NODE_ENV = developement`
-1. Run **Build**: `NODE_ENV = production`
-   > Knowing this, you can take advantage and set up conditionals based on the already-available `NODE_ENV`. A major advantage is setting up API urls. When exporting like this...
-   >
-   > ```js
-   > export default { ...config };
-   > ```
-   >
-   > ... you can access variables like this...
-   >
-   > ```js
-   > import config from '.../config.js';
-   > ...
-   >   await fetch(config.API_ENDPOINT)
-   > ```
-   >
-   > **[ index.js ]** - bog-standard React App-wrapper using BrowserRouter
-   > **[ setupTests.js ]** - configuration for Enzyme testing
+Nothing really too complex about the page as a whole. Some notable things:
 
----
+- NavBar: added a `'scroll'` event listener to the `window` to create a dynamic style for the nav container
 
-## styles:
+- Splash + Careers: did a 'hacky' background trick to mimic color and opacity over the mock background images
 
-Fairly straight-forward Sass setup, with a simple reset and global stylesheet imported into the root index file. I won't get into Sass here, but know that I broke-out individual mixins to be used as imports in isolated **[ .scss ]** files
+- About: offloaded long urls to a helper object to clean up the JSX
 
----
+- MapModal: render variable for the modal info to clean up the JSX
 
-###### _I'll briefly cover some global-level stuff before breaking down the App itself_
+## src/components/shared:
 
-### jsconfig.json:
+Some reusable single-tag components for reuse around the page. I created a simple API for their use, particularly with the `'variant'` prop to support different stylings if needed.
 
-This is at the root level, but it's use is important in understanding the syntax used throughout the app. I won't go too in-depth, but essentially what's going on is it's creating a global alias for the **[ src/ ]** file directory. The side effect is that you can re-factor local imports:
+## src/styles:
+
+Again, not much to say here. I used my personally CSS reset (which is fairly light), variables for colors and fonts, and mixins for setting media queries and a dynamic html font-size (very helpful for even more responsiveness!).
+
+### Random Stuff:
+
+#### tsconfig.json:
+
+Basically what's going on here is I'm "aliasing" the `src/` folder. First, set the root directory `{ "baseUrl": "." }` followed by creating the alias itself `{ "paths": "src/*": ["./src/*"] }` which will make any import url starting with `'src/'` instead of `'./'` will default to the `src/` folder, allowing you to import like this:
 
 ```js
-/* someComponent.js */
-import { PostService } from '../../../../../src/services';
-...to...
-import { PostService } from 'src/services';
+import { NavBar } from 'src/components';
 ```
 
-For more info on the `jsconfig.json`, check out the docs [*_HERE!_*][jsconfig-docs]
+#### Barrels...
 
-### constants:
+You may have already noticed that there are actually many [ index.js ] files peppered throughout the app. These are (sometimes) known as "barrel" exports, and have a few advantages when dealing with a larger file-directory. The index file in the `components/` folder for example:
 
-Not strictly necessary, but this can help prevent typos, along with making changes to the database less tedious to update throughout the app.
-
-<!-- ### services:
-
-This is where the logic for interfacing with the server lives. Each "method" has been broken-out into it's own file. [ token.service.js ] is for handling Auth-token processes. -->
-
-<!-- ### hooks:
-
-This is where I keep custom hooks used by multiple components, though I only needed 1 for now. This hook handles every form in the app, recieving and updating piped-in form-fields. The major benefit of this kind of hook is that it minimizes the use of `useState` hooks throughout the app. -->
-
-# TODO!!!
-
-<!-- ### context:
-
-Because the scale of this app is so small, I've only created a single context. This is the "hook" way of doing context, both creating the context...
-
-```js
-export const DatabaseContext = createContext();
-```
-
-...and provider...
-
-```js
-<DatabaseContext.Provider value={value}>
-  {props.children}
-</DatabaseContext.Provider>
-```
-
-...in the same file. To use, you import the provider at the top level...
-
-```js
-import DatabaseContextProvider from '.../databaseContext';
-...
-<DatabaseContextProvider>
-  (...insert components here!)
-</DatabaseContextProvider>
-```
-
-...then invoke inside a component and _just use it_:
-
-```js
-import { useContext } from 'react';
-import { DatabaseContext } from '.../databaseContext';
-...
-const { data, functions, andMore } = useContext(DatabaseContext);
-``` -->
-
-### Barrels...
-
-You may have already noticed that there are actually many [ index.js ] files peppered throughout the app. These are known as "barrel" exports, and have a few advantages when dealing with a complex file-directory. The index file in the [ components ] folder has a short explanation, but I'll also put it here:
-
-```js
-/*
-|------------------------------------------------------
-| BARREL EXPORT FILE
-|------------------------------------------------------
-| How-To barrel-export components:
-| export { default as Comp1 } from './comp1/comp1.js' (omit .js)
-|
-| Why? Readability and (to an extent) testing:
-| import { Comp1, Comp2, Comp3, Comp4 } from './components'
-| import { Route1, Route2, Route3, Route4 } from './routes'
-*/
-export { default as LoginForm } from './loginForm/loginForm'
-export { default as Header } from './header/header'
+```javascript
+export { default as NavBar } from './navBar/navBar'
+export { default as Splash } from './splash/splash'
 etc...
 ```
 
-You can see this in action in **[ app.js ]**:
+You can see this in action in **` /app.js `**:
 
-# TODO!!!
-
-<!-- ```js
+```js
 import {
-  LoginPage,
-  HomePage,
-  SongsPage,
-  SetsPage,
-  GigsPage,
-} from 'src/routes';
-``` -->
+  NavBar,
+  Splash,
+  About,
+  Careers,
+  MapModal,
+  ContactForm,
+  Footer,
+} from 'src/components';
+```
 
-> _Note that the import doesn't point to the index file. Node perceives **[ index.js ]** files as points of entry and the default file to grab exports from, essentially making it an implicit file in import statements_
-
----
-
-## app:
-
-<!-- **useState**: `userName` is passed down to context and the Header, working as a boolean switch to control the behavior of the app. "If there isn't a name, don't display nav-bar links". This state is also controlled by both... -->
-
-<!-- **useEffect**: Basic "on mount" fetcher that checks local storage for an auth token, improving UX -->
-
-<!-- **Helper Functions**: `handleLoginSuccess` and `handleLogout` do what you'd expect by the name. Once a name is set to _State_, this fires off the context provider to proceed with fetching data from the server and sending the user to the home page. -->
-
----
-
-## routes:
-
-There's not much to say here, these essentially just import and render components, acting as entry points to component trees. However, I'll briefly cover...
-
-#### utils:
-
-**1. Private/Public-Routes**: This serves as a UX enhancement, both preventing users not logged in from accessing the app, and already logged in users from accessing the Login page.
-**1. PageNotFound**: Standard inclusion, and in the case of this version, you can access this page vie the "Gigs" page as this is a feature not yet implemented.
-
----
-
-<!-- ## components:
-
-###### _I won't cover every component individually, but take a more broad-stroke approach, mentioning any note-worthy features when necessary_ -->
-
-<!-- ##### PropTypes:
-
-I decided to use PropType validation throughout, and would say that I'm glad I did. PropTypes can really help with early debugging by throwing errors in the console that you wouldn't have caught normally until much later testing. On such example would be if you had a required prop that was, say, a function, if it wasn't properly passed down (by parents, context, conditionals, etc...), then the console would ask why your required function is "undefined", even when you haven't iomplemented said function yet. -->
-
-<!-- ##### utils: -->
+- _Note that the import doesn't point to the index file. Node perceives **`index.js`** files as points of entry and the default file to grab exports from, essentially making it an implicit file in import statements_
 
 ---
 

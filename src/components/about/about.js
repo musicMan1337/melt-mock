@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './about.scss';
-
 import { url } from './iconUrls';
 
 const About = () => {
