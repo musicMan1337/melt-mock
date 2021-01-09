@@ -12,12 +12,12 @@
 
   <h1 align="center">meltmedia Challenge!</h1>
 
-  <p align="center">
+  <h3 align="center">
     Vanilla React/Sass - HTML/CSS Wireframe
-  </p>
-  <p align="center">
+  </h3>
+  <h3 align="center">
     You can check out the live page <a href="https://melt-challenge.vercel.app">HERE!</a>
-  </p>
+  </h3>
   <p align="center">
     ...or run <code>npm i && npm start</code> 😅
   </p>
