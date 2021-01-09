@@ -10,7 +10,7 @@
 <p align="center">
     <img src="https://www.drupal.org/files/styles/grid-3/public/meltmedia_alternate_logo.png?itok=KDrusUFD" alt="Logo" width="200" height="200">
 
-  <h3 align="center">meltmedia Challenge!</h3>
+  <h1 align="center">meltmedia Challenge!</h1>
 
   <p align="center">
     Vanilla React/Sass - HTML/CSS Wireframe
